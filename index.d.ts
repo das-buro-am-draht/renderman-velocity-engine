@@ -40,6 +40,7 @@ interface CompileConfig {
   unescape?: { [varName: string]: boolean } // unescape var config
   // @see https://github.com/shepherdwind/velocity.js/pull/105
   valueMapper?: (value: any) => any
+  invalidReferenceHandler?: (ast: VELOCITY_AST, options?: any) => any
 }
 
 declare module 'velocityjs' {
