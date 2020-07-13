@@ -339,6 +339,11 @@ describe('Compile', function() {
       assert.equal('', render(vm))
     })
 
+    it('#if not work silent', function() {
+      var vm = '#if($css_pureui)hello world#end'
+      assert.equal(new Compile(parse(vm)).render({}, null, true), '')
+    })
+
     it('#elseif & #else', function() {
       var vm = '#if($foo < 5)Go North#elseif($foo == 8)' +
       'Go East#{else}Go South#end'
