@@ -208,7 +208,7 @@ describe('Compile', function() {
       assert.equal('&lt;i&gt;', ret)
     })
 
-    it ('valueMapper support', () => {
+    it('valueMapper support', () => {
       const values = [];
       const vm = '#set($foo = "bar")\n$foo'
       const ret = render(vm, {}, {}, {
@@ -220,7 +220,7 @@ describe('Compile', function() {
       assert.deepEqual(values, ['bar']);
       assert.equal(ret.trim(), 'foo');
     });
-
+    
     describe('env', function() {
       it('should throw on property when parent is null', function() {
         var vm = '$foo.bar';
@@ -339,6 +339,11 @@ describe('Compile', function() {
       assert.equal('', render(vm))
     })
 
+    it('#if not work silent', function() {
+      var vm = '#if($css_pureui)hello world#end'
+      assert.equal(new Compile(parse(vm)).render({}, null, true), '')
+    })
+
     it('#elseif & #else', function() {
       var vm = '#if($foo < 5)Go North#elseif($foo == 8)' +
       'Go East#{else}Go South#end'
@@ -357,7 +362,20 @@ describe('Compile', function() {
 
       assert.equal('true', render(vm, {foo: foo}))
     })
-
+  
+    it('#if invalid reference equals empty string', function() {
+      var vm = '#if($foo == "")render me#end'
+      var compile = new Compile(parse(vm), {invalidReferenceHandler: () => ''})
+    
+      assert.equal(compile.render({}), 'render me')
+    });
+  
+    it('#if invalid reference not equals empty string', function() {
+      var vm = '#if($foo != "")do not render me#end'
+      var compile = new Compile(parse(vm), {invalidReferenceHandler: () => ''})
+    
+      assert.equal(compile.render({}), '')
+    });
   })
 
   describe('Velocimacros', function() {
@@ -944,5 +962,5 @@ describe('Compile', function() {
       assert.equal(render(vm, {data: {k: ["a", "b"]}}), expected)
     });
   });
-})
+});
 
