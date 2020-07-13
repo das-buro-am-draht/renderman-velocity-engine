@@ -1,5 +1,5 @@
 {
-  "name": "velocityjs",
+  "name": "@das-buro-am-draht/renderman-velocity-engine",
   "description": "Velocity Template Language(VTL) for JavaScript",
   "version": "2.0.0",
   "license": "MIT",
@@ -9,7 +9,7 @@
   "homepage": "http://git.shepherdwind.com/velocity.js/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/shepherdwind/velocity.js.git"
+    "url": "https://github.com/das-buro-am-draht/renderman-velocity-engine.git"
   },
   "engines": {
     "node": ">=0.8.0"
