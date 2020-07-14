@@ -1,3 +1,16 @@
+## 2.1.1 2020-07-24
+
+### Bug Fixes
+
+- **module:** use correct module name ([4e694ef](https://github.com/das-buro-am-draht/renderman-velocity-engine/commit/4e694ef59b894da452c6c0f5ad67b4df61d24ff1))
+
+
+## 2.1.0 2020-07-13
+
+### Features
+
+- **compile:** add support for custom invalid reference handler ([4f0a3ef](https://github.com/das-buro-am-draht/renderman-velocity-engine/commit/4f0a3ef2615d4bb749d7124d2cddbd49b1727716))
+
 ## 2.0.0 2019-09-26
 
 Break change
