@@ -36,8 +36,7 @@
   },
   "scripts": {
     "release": "standard-version",
-    "test": "mocha tests --require should",
-    "pub": "npm version patch && npm publish && git push origin master && git push origin --tag"
+    "test": "mocha tests --require should"
   },
   "spm": {
     "main": "index.js",
