@@ -10,46 +10,35 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
     steps:
-    - name: checkout
+    - name: Checkout
       uses: actions/checkout@v2
-    
-    - name: use node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+
+    - name: Cache node modules
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-node-modules
       with:
-        node-version: ${{ matrix.node-version }}
+        path: node_modules
+        key: ${{ runner.os }}-test-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-test-${{ env.cache-name }}-
+          ${{ runner.os }}-test-
+          ${{ runner.os }}-
 
-    - name: npm install, npm test
-      run: |
-        npm install
-        npm run test
-        
-  coverage:
-    needs: [test]
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
+    - name: Install npm dependencies
+      run: npm install
 
-    steps:
-    - name: checkout
-      uses: actions/checkout@v2
-    
-    - name: use node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+    - name: Build parser
+      run: make parse
 
-    - name: npm install, make pares, make cov
-      run: |
-        npm install
-        make parse
-        make cov
- 
-    - name: upload coveralls report
+    - name: Run unit tests
+      run: npm run test
+
+    - name: Create coverage reports
+      run: make cov
+
+    - name: Publish coverage reports
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}

@@ -6,6 +6,8 @@ name: Publish release
 on:
   push:
     # Sequence of patterns matched against refs/tags
+    branches:
+      [renderman]
     tags:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
@@ -30,6 +32,9 @@ jobs:
 
     - name: Run npm install
       run: npm install
+
+    - name: Build parser
+      run: make parse
 
     - name: Run npm test
       run: npm run test
