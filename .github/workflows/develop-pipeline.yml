@@ -4,8 +4,6 @@
 name: Test & Coverage
 
 on:
-  push:
-    branches: [ renderman ]
   pull_request:
     branches: [ renderman ]
 
