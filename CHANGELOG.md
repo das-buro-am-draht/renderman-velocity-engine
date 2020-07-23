@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/das-buro-am-draht/renderman-velocity-engine/compare/v2.1.1...v2.2.0) (2020-07-23)
+
+
+### Features
+
+* **dependencies:** add dependabot config ([ffe62ab](https://github.com/das-buro-am-draht/renderman-velocity-engine/commit/ffe62ab5420802583fc02857611294fc6d5bc644))
+* **workflow:** introduce semantic versioning ([#10](https://github.com/das-buro-am-draht/renderman-velocity-engine/issues/10)) ([621d72c](https://github.com/das-buro-am-draht/renderman-velocity-engine/commit/621d72cca69e14df2ad7507df1a949263a721ed9))
+
 ### [2.1.1](https://github.com/das-buro-am-draht/renderman-velocity-engine/compare/v2.1.0...v2.1.1) (2020-07-14)
 
 
