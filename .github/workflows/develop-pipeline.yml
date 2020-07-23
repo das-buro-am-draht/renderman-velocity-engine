@@ -26,37 +26,19 @@ jobs:
           ${{ runner.os }}-test-
           ${{ runner.os }}-
 
-    - name: npm install, npm test
-      run: |
-        npm install
-        npm run test
-        
-  coverage:
-    needs: [test]
-    runs-on: ubuntu-latest
+    - name: Install npm dependencies
+      run: npm install
 
-    steps:
-    - name: checkout
-      uses: actions/checkout@v2
-    
-    - name: Cache node modules
-      uses: actions/cache@v2
-      env:
-        cache-name: cache-node-modules
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-test-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-test-${{ env.cache-name }}-
-          ${{ runner.os }}-test-
-          ${{ runner.os }}-
+    - name: Run unit tests
+      run: npm run test
 
-    - name: Run make parse && make cov
-      run: |
-        make parse
-        make cov
- 
-    - name: upload coveralls report
+    - name: Build parser
+      run: make parse
+
+    - name: Create coverage reports
+      run: make cov
+
+    - name: Publish coverage reports
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
