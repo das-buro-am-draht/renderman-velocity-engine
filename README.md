@@ -13,9 +13,8 @@ Velocity - Template Engine
 [download-url]: https://npmjs.org/package/velocityjs
 [travis-image]: https://img.shields.io/travis/shepherdwind/velocity.js/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/shepherdwind/velocity.js
-[coveralls-image]: https://img.shields.io/coveralls/shepherdwind/velocity.js.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/shepherdwind/velocity.js?branch=master
-
+[coveralls-image]: https://coveralls.io/repos/github/das-buro-am-draht/renderman-velocity-engine/badge.svg?branch=renderman
+[coveralls-url]: https://coveralls.io/github/das-buro-am-draht/renderman-velocity-engine?branch=renderman
 
 Velocityjs is [velocity](http://velocity.apache.org/) template engine for javascript.
 
