@@ -9,18 +9,21 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
     steps:
     - name: checkout
       uses: actions/checkout@v2
-    
-    - name: use node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+
+    - name: Cache node modules
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-node-modules
       with:
-        node-version: ${{ matrix.node-version }}
+        path: node_modules
+        key: ${{ runner.os }}-test-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-test-${{ env.cache-name }}-
+          ${{ runner.os }}-test-
+          ${{ runner.os }}-
 
     - name: npm install, npm test
       run: |
@@ -30,22 +33,25 @@ jobs:
   coverage:
     needs: [test]
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
 
     steps:
     - name: checkout
       uses: actions/checkout@v2
     
-    - name: use node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+    - name: Cache node modules
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-node-modules
       with:
-        node-version: ${{ matrix.node-version }}
+        path: node_modules
+        key: ${{ runner.os }}-test-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-test-${{ env.cache-name }}-
+          ${{ runner.os }}-test-
+          ${{ runner.os }}-
 
-    - name: npm install, make pares, make cov
+    - name: Run make parse && make cov
       run: |
-        npm install
         make parse
         make cov
  
