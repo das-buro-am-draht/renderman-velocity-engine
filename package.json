@@ -1,11 +1,7 @@
 {
   "name": "@das-buro-am-draht/renderman-velocity-engine",
   "description": "Velocity Template Language(VTL) for JavaScript",
-<<<<<<< HEAD
-  "version": "2.0.3",
-=======
   "version": "2.2.1",
->>>>>>> renderman
   "license": "MIT",
   "keywords": [
     "velocity template"
