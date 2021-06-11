@@ -1,5 +1,6 @@
 var utils = require('../utils');
 var Helper = require('../helper/index');
+
 function Velocity(asts, config) {
   this.asts = asts;
   this.config = utils.mixin(
@@ -13,6 +14,13 @@ function Velocity(asts, config) {
       unescape: {},
       valueMapper(value) {
         return value;
+      },
+      invalidReferenceHandler(ast, options) {
+        if (options.isVal) {
+          return options.isSilent ? '' : Helper.getRefText(ast)
+        }
+  
+        return undefined;
       },
     },
     config
