@@ -1,7 +1,11 @@
 {
-  "name": "velocityjs",
+  "name": "@das-buro-am-draht/renderman-velocity-engine",
   "description": "Velocity Template Language(VTL) for JavaScript",
+<<<<<<< HEAD
   "version": "2.0.3",
+=======
+  "version": "2.2.1",
+>>>>>>> renderman
   "license": "MIT",
   "keywords": [
     "velocity template"
@@ -9,7 +13,7 @@
   "homepage": "http://git.shepherdwind.com/velocity.js/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/shepherdwind/velocity.js.git"
+    "url": "https://github.com/das-buro-am-draht/renderman-velocity-engine.git"
   },
   "engines": {
     "node": ">=0.8.0"
@@ -23,19 +27,29 @@
     "path": false
   },
   "devDependencies": {
-    "coveralls": "~2.11.2",
-    "istanbul": "~0.3.5",
-    "jison": ">=0.3",
-    "mocha": ">=1.7.2",
-    "mocha-lcov-reporter": "0.0.1",
-    "should": "^7.0.1"
+    "@commitlint/config-conventional": "12.1.4",
+    "commitlint": "12.1.4",
+    "coveralls": "3.1.0",
+    "husky": "6.0.0",
+    "istanbul": "0.4.5",
+    "jison": "0.4.18",
+    "mocha": "^9.0.0",
+    "mocha-lcov-reporter": "1.3.0",
+    "should": "13.2.3",
+    "standard-version": "9.3.0"
   },
   "scripts": {
     "test": "mocha test --require should",
-    "pub": "npm version patch && npm publish && git push origin master && git push origin --tag"
+    "pub": "npm version patch && npm publish && git push origin master && git push origin --tag",
+    "release": "standard-version"
   },
   "spm": {
     "main": "index.js",
     "buildArgs": "--skip fs,path"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }

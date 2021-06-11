@@ -130,8 +130,8 @@ module.exports = function(Velocity, utils) {
         }, this);
       }
 
-      if (isVal && ret === undefined) {
-        ret = isSilent ? '' : Velocity.Helper.getRefText(ast);
+      if (ret === undefined) {
+        ret = this.config.invalidReferenceHandler(ast, {isVal: isVal, isSilent: isSilent});
       }
 
       ret = (ast.prue && escape) ? convert(ret) : ret;

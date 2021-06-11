@@ -16,6 +16,4 @@ cov: $(SRC) $(TESTS)
 	    --reporter mocha-lcov-reporter \
 			--require should \
 	    --timeout 5s \
-			$(TESTS) \
-			&& cat ./coverage/lcov.info | \
-			$(BIN)/coveralls --verbose
+			$(TESTS)
