@@ -1,4 +1,33 @@
-## 2.0.0 2019-09-26
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [2.2.1](https://github.com/das-buro-am-draht/renderman-velocity-engine/compare/v2.2.0...v2.2.1) (2020-07-23)
+
+## [2.2.0](https://github.com/das-buro-am-draht/renderman-velocity-engine/compare/v2.1.1...v2.2.0) (2020-07-23)
+
+
+### Features
+
+* **dependencies:** add dependabot config ([ffe62ab](https://github.com/das-buro-am-draht/renderman-velocity-engine/commit/ffe62ab5420802583fc02857611294fc6d5bc644))
+* **workflow:** introduce semantic versioning ([#10](https://github.com/das-buro-am-draht/renderman-velocity-engine/issues/10)) ([621d72c](https://github.com/das-buro-am-draht/renderman-velocity-engine/commit/621d72cca69e14df2ad7507df1a949263a721ed9))
+
+### [2.1.1](https://github.com/das-buro-am-draht/renderman-velocity-engine/compare/v2.1.0...v2.1.1) (2020-07-14)
+
+
+### Bug Fixes
+
+* **module:** use correct module name ([4e694ef](https://github.com/das-buro-am-draht/renderman-velocity-engine/commit/4e694ef59b894da452c6c0f5ad67b4df61d24ff1))
+
+### [2.1.0](https://github.com/das-buro-am-draht/renderman-velocity-engine/compare/v2.0.0...v2.1.0) (2020-07-13)
+
+
+### Features
+
+* **compile:** add support for custom invalid reference handler ([4f0a3ef](https://github.com/das-buro-am-draht/renderman-velocity-engine/commit/4f0a3ef2615d4bb749d7124d2cddbd49b1727716))
+
+
+### [2.0.0](https://github.com/das-buro-am-draht/renderman-velocity-engine/compare/v1.1.4...v2.0.0) (2019-09-26)
 
 Break change
 
