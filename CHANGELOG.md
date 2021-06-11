@@ -1,15 +1,13 @@
-
 # Changelog
+
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## 2.0.3 2020-12-02
-- fix: issue with loop variable access inside nested foreach statements [136](https://github.com/shepherdwind/velocity.js/pull/136)
+## [2.3.0](https://github.com/das-buro-am-draht/renderman-velocity-engine/compare/v2.0.3...v2.3.0) (2021-06-11)
 
-## 2.0.2 2020-10-19
-- add default set and get method for array and map object [133](https://github.com/shepherdwind/velocity.js/pull/133)
 
-## 2.0.1 2020-09-02
-- fix Bug with #set inside #foreach [129](https://github.com/shepherdwind/velocity.js/issues/129)
+### Bug Fixes
+
+* **project:** fix merge conflict artifact ([4782ef0](https://github.com/das-buro-am-draht/renderman-velocity-engine/commit/4782ef082c8066abac408210d45d1c467217fdd4))
 
 ### [2.2.1](https://github.com/das-buro-am-draht/renderman-velocity-engine/compare/v2.2.0...v2.2.1) (2020-07-23)
 
@@ -35,6 +33,15 @@ All notable changes to this project will be documented in this file. See [standa
 * **compile:** add support for custom invalid reference handler ([4f0a3ef](https://github.com/das-buro-am-draht/renderman-velocity-engine/commit/4f0a3ef2615d4bb749d7124d2cddbd49b1727716))
 
 ### [2.0.0](https://github.com/das-buro-am-draht/renderman-velocity-engine/compare/v1.1.4...v2.0.0) (2019-09-26)
+
+## 2.0.3 2020-12-02
+- fix: issue with loop variable access inside nested foreach statements [136](https://github.com/shepherdwind/velocity.js/pull/136)
+
+## 2.0.2 2020-10-19
+- add default set and get method for array and map object [133](https://github.com/shepherdwind/velocity.js/pull/133)
+
+## 2.0.1 2020-09-02
+- fix Bug with #set inside #foreach [129](https://github.com/shepherdwind/velocity.js/issues/129)
 
 Break change
 
