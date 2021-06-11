@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "12.1.4",
-    "commitlint": "9.1.0",
+    "commitlint": "12.1.4",
     "coveralls": "3.1.0",
     "husky": "6.0.0",
     "istanbul": "0.4.5",
